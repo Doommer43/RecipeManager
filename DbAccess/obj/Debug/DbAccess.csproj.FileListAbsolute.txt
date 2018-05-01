@@ -1,0 +1,9 @@
+C:\Users\dani479d\GitBash\RecipeManager\DbAccess\bin\Debug\DbAccess.dll
+C:\Users\dani479d\GitBash\RecipeManager\DbAccess\bin\Debug\DbAccess.pdb
+C:\Users\dani479d\GitBash\RecipeManager\DbAccess\bin\Debug\Entities.dll
+C:\Users\dani479d\GitBash\RecipeManager\DbAccess\bin\Debug\Entities.pdb
+C:\Users\dani479d\GitBash\RecipeManager\DbAccess\obj\Debug\DbAccess.csprojResolveAssemblyReference.cache
+C:\Users\dani479d\GitBash\RecipeManager\DbAccess\obj\Debug\DbAccess.csproj.CoreCompileInputs.cache
+C:\Users\dani479d\GitBash\RecipeManager\DbAccess\obj\Debug\DbAccess.csproj.CopyComplete
+C:\Users\dani479d\GitBash\RecipeManager\DbAccess\obj\Debug\DbAccess.dll
+C:\Users\dani479d\GitBash\RecipeManager\DbAccess\obj\Debug\DbAccess.pdb

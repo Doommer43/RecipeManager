@@ -13,3 +13,25 @@ C:\Users\josa\Documents\Visual Studio 2017\Projects\EksamenM2E2017.Opskrifter\Ek
 C:\Users\josa\Documents\Visual Studio 2017\Projects\EksamenM2E2017.Opskrifter\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.csproj.CoreCompileInputs.cache
 C:\Users\josa\Documents\Visual Studio 2017\Projects\EksamenM2E2017.Opskrifter\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.exe
 C:\Users\josa\Documents\Visual Studio 2017\Projects\EksamenM2E2017.Opskrifter\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.pdb
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\EksamenM2E2017.Opskrifter.exe.config
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\EksamenM2E2017.Opskrifter.exe
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\EksamenM2E2017.Opskrifter.pdb
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.csprojResolveAssemblyReference.cache
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\MainWindow.g.cs
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\App.g.cs
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter_MarkupCompile.cache
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter_MarkupCompile.lref
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\MainWindow.baml
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.g.resources
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.Properties.Resources.resources
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.csproj.GenerateResource.cache
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.csproj.CoreCompileInputs.cache
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.exe
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.pdb
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\DbAccess.dll
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\Entities.dll
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\Services.dll
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\DbAccess.pdb
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\Entities.pdb
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\Services.pdb
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.csproj.CopyComplete
