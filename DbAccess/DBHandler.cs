@@ -18,7 +18,7 @@ namespace DbAccess
         public List<Ingredient> GetAllIngredients()
         {
             List<Ingredient> list = new List<Ingredient>();
-            DataSet ds = ExecueQuery("SELECT * FROM Ingredients", CommandType.Text);
+            DataSet ds = ExecuteQuery("SELECT * FROM Ingredients", CommandType.Text);
 
             foreach (DataRow row in ds.Tables[0].Rows)
             {
@@ -33,8 +33,8 @@ namespace DbAccess
         public  List<Recipe> GetAllRecipes()
         {
             List<Recipe> list = new List<Recipe>();
-            DataSet dsR = ExecueQuery("SELECT * FROM Recipies", CommandType.Text);
-            DataSet dsRvI = ExecueQuery($"SELECT RecipeID, RecipeVsIngredient.IngredientID, Ingredients.IngredientName, IngredientPrice, IngredientType FROM RecipeVsIngredient INNER jOIN Ingredients ON RecipeVsIngredient.IngredientID = Ingredients.IngredientID ORDER BY RecipeID ASC", CommandType.Text);
+            DataSet dsR = ExecuteQuery("SELECT * FROM Recipies", CommandType.Text);
+            DataSet dsRvI = ExecuteQuery($"SELECT RecipeID, RecipeVsIngredient.IngredientID, Ingredients.IngredientName, IngredientPrice, IngredientType FROM RecipeVsIngredient INNER jOIN Ingredients ON RecipeVsIngredient.IngredientID = Ingredients.IngredientID ORDER BY RecipeID ASC", CommandType.Text);
 
             foreach (DataRow row in dsR.Tables[0].Rows)
             {

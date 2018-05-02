@@ -39,7 +39,7 @@ namespace DbAccess
             return false;
         }
 
-        public DataSet ExecueQuery(string query, CommandType type)
+        public DataSet ExecuteQuery(string query, CommandType type)
         {
             if (!string.IsNullOrEmpty(query))
             {

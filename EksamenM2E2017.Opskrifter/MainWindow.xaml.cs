@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DbAccess;
 using Entities;
+using Services;
 
 namespace EksamenM2E2017.Opskrifter
 {
@@ -23,6 +25,7 @@ namespace EksamenM2E2017.Opskrifter
     public partial class MainWindow : Window
     {
         DBHandler dbh = new DBHandler(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=RecipeManager;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+        ApiAccess apa = new ApiAccess(@"https://en.wikipedia.org/w/api.php");
         List<Ingredient> newRecipe = new List<Ingredient>();
         public MainWindow()
         {
@@ -32,11 +35,13 @@ namespace EksamenM2E2017.Opskrifter
 
             List<Ingredient> ing = dbh.GetAllIngredients();
 
-            List<string> typeList = new List<string>();
-            typeList.Add("Diary");
-            typeList.Add("Flour");
-            typeList.Add("Meat");
-            typeList.Add("Vegetable");
+            List<string> typeList = new List<string>
+            {
+                "Diary",
+                "Flour",
+                "Meat",
+                "Vegetable"
+            };
 
             //First tab
             ListBoxRecipeList.ItemsSource = rec;
@@ -48,7 +53,7 @@ namespace EksamenM2E2017.Opskrifter
             //Other
             CombxIngredientType.ItemsSource = typeList;
 
-            
+
             //Old code :
             //List<TestIngredientClass> ingredients = new List<TestIngredientClass>();
 
@@ -62,7 +67,7 @@ namespace EksamenM2E2017.Opskrifter
             //ingredients.Add(new TestIngredientClass(IngredientType.Mejeriprodukter, "Gær", 20));
             //ingredients.Add(new TestIngredientClass(IngredientType.Mejeriprodukter, "Mælk", 12));
             //ingredients.Add(new TestIngredientClass(IngredientType.Kolonial, "Sukker", 30));
-            
+
             //DtgAllIngredients.ItemsSource = ingredients;
 
             //List<TestRecipeClass> recipes = new List<TestRecipeClass>();
@@ -81,24 +86,43 @@ namespace EksamenM2E2017.Opskrifter
 
         private void ListBoxRecipeList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Recipe a = (Recipe) ListBoxRecipeList.SelectedItem;
+            Recipe a = (Recipe)ListBoxRecipeList.SelectedItem;
 
             TxtBoxPersons.Text = a.Persons.ToString();
+            TxtBoxPrice.Text = a.GetPrice().ToString();
             DtgIngredientsInSelectedRecipe.ItemsSource = a.Ingredients;
         }
 
         private void BtnCreateNewIngredient_Click(object sender, RoutedEventArgs e)
         {
-            string name = TbxIngredientName.Text;
-            int price = Convert.ToInt32(TbxIngredientPrice.Text);
-
-            Enum.TryParse((string)CombxIngredientType.SelectedItem, out Entities.IngredientType res);
-
-            if(!string.IsNullOrWhiteSpace(name) && price >= 0)
+            try
             {
-                dbh.ExecuteNonQuery($"INSERT INTO Ingredients (IngredientName, IngredientPrice, IngredientType) VALUES ('{name}', {price}, '{res}')");
-                DtgIngredients.Items.Refresh();
+                string name = TbxIngredientName.Text;
+                int price = Convert.ToInt32(TbxIngredientPrice.Text);
+
+                Enum.TryParse((string)CombxIngredientType.SelectedItem, out Entities.IngredientType res);
+
+                List<Ingredient> ing = dbh.GetAllIngredients();
+                //Checks if name is unique
+                foreach (Ingredient item in ing)
+                {
+                    if(item.Name.ToLower() == name.ToLower())
+                    {
+                        throw new Exception("En ingrediens med det navn eksiterer allerede.");
+                    }
+                }
+
+                if (!string.IsNullOrWhiteSpace(name) && price >= 0)
+                {
+                    dbh.ExecuteNonQuery($"INSERT INTO Ingredients (IngredientName, IngredientPrice, IngredientType) VALUES ('{name}', {price}, '{res}')");
+                    DtgIngredients.Items.Refresh();
+                }
             }
+            catch (Exception)
+            {
+                MessageBox.Show("Kunne ikke oprette ingrediens. Check stavning er korrekt.");
+            }
+            
         }
 
         private void BtnMoveItemRight_Click(object sender, RoutedEventArgs e)
@@ -136,12 +160,63 @@ namespace EksamenM2E2017.Opskrifter
 
         private void BtnAddNewRecipe_Click(object sender, RoutedEventArgs e)
         {
-            string recipeName = TxtBoxRecipeName.Text;
-            int personsFed = Convert.ToInt32(TxtBoxCountOfPersonsInRecipe.Text);
+            try
+            {
+                string recipeName = TxtBoxRecipeName.Text;
+                int personsFed = Convert.ToInt32(TxtBoxCountOfPersonsInRecipe.Text);
+                int reID = 0;
 
-            //Insert to Recipies
+                List<Recipe> rec = dbh.GetAllRecipes();
+                //Checks if name is unique
+                foreach (Recipe item in rec)
+                {
+                    if (item.Name.ToLower() == recipeName.ToLower())
+                    {
+                        throw new Exception("En opskrift med det navn eksiterer allerede.");
+                    }
+                }
 
-            //Insert to RecipeVsIngredient
+                if (string.IsNullOrWhiteSpace(recipeName))
+                {
+                    //Insert to Recipies
+                    dbh.ExecuteNonQuery($"INSERT INTO Recipies (RecipeName) VALUES ('{recipeName}')");
+
+                    //Retrieves newly generated ID for the Recipe (Move to unused method?)
+                    DataSet ds = dbh.ExecuteQuery($"SELECT RecipeID FROM Recipies WHERE '{recipeName}' = RecipeName", CommandType.Text);
+                    foreach (DataRow item in ds.Tables[0].Rows)
+                    {
+                        reID = item.Field<int>("RecipeID");
+                    }
+
+                    //Insert to RecipeVsIngredient
+                    foreach (Ingredient item in newRecipe)
+                    {
+                        dbh.ExecuteNonQuery($"INSERT INTO RecipeVsIngredient (RecipeID, IngredientID) VALUES ({reID}, {item.ID})");
+                    }
+
+                    ListBoxRecipeList.Items.Refresh();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kunne ikke oprette Opskriften i databasen");
+            }
+
+        }
+
+        private void BtnIngredientInfo_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Ingredient i = (Ingredient)DtgIngredients.SelectedItem;
+                string res = apa.GetApiResponse($"?format=json&action=query&prop=extracts&exintro=&explaintext=&titles={i.Name}");
+                MessageBox.Show(res, $"Info about {i.Name}", MessageBoxButton.OK);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Kunne ikke få fat i informationen", "Ups!");
+            }
+            
         }
     }
 }

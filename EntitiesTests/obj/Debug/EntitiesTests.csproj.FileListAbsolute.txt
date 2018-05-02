@@ -1,0 +1,16 @@
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\EntitiesTests.dll
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\EntitiesTests.pdb
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\Entities.dll
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\Entities.pdb
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\obj\Debug\EntitiesTests.csprojResolveAssemblyReference.cache
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\obj\Debug\EntitiesTests.csproj.CoreCompileInputs.cache
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\obj\Debug\EntitiesTests.csproj.CopyComplete
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\obj\Debug\EntitiesTests.dll
+C:\Users\dani479d\GitBash\RecipeManager\EntitiesTests\obj\Debug\EntitiesTests.pdb

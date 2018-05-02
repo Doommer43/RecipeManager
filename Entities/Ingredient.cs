@@ -57,7 +57,7 @@ namespace Entities
 
         public override string ToString()
         {
-            return $"{Name} {Price}kr.";
+            return $"{Name}(s) is a {Type} and costs {Price}kr. Per kilo.";
         }
     }
 }

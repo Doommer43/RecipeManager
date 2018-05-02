@@ -4,3 +4,6 @@ C:\Users\dani479d\GitBash\RecipeManager\Services\obj\Debug\Services.csprojResolv
 C:\Users\dani479d\GitBash\RecipeManager\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
 C:\Users\dani479d\GitBash\RecipeManager\Services\obj\Debug\Services.dll
 C:\Users\dani479d\GitBash\RecipeManager\Services\obj\Debug\Services.pdb
+C:\Users\dani479d\GitBash\RecipeManager\Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dani479d\GitBash\RecipeManager\Services\bin\Debug\Newtonsoft.Json.xml
+C:\Users\dani479d\GitBash\RecipeManager\Services\obj\Debug\Services.csproj.CopyComplete

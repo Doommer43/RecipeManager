@@ -35,3 +35,5 @@ C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\DbAc
 C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\Entities.pdb
 C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\Services.pdb
 C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\obj\Debug\EksamenM2E2017.Opskrifter.csproj.CopyComplete
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\Newtonsoft.Json.dll
+C:\Users\dani479d\GitBash\RecipeManager\EksamenM2E2017.Opskrifter\bin\Debug\Newtonsoft.Json.xml
